@@ -1,0 +1,174 @@
+:root {
+    --bg: #f6f8fa;
+    --card: #fff;
+    --text: #0b1220;
+    --muted: #555;
+    --accent: #2b7cff;
+    --danger: #b33;
+    --surface-1: #fbfdff; /* small surfaces */
+}
+
+/*
+    styles.css — organized and commented
+    Sections:
+        1) Variables
+        2) Base / Reset
+        3) Layout (header, main grid, footer)
+        4) Components (forms, list, buttons, counter, log)
+        5) Theme (dark variables)
+        6) Responsive
+*/
+
+/* 2) Base / Reset */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    line-height: 1.4;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links/buttons default */
+button { cursor: pointer; }
+
+
+/* 3) Layout */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(90deg, #fff, #f0f4f8);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+.controls {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.panel {
+    background: var(--card);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(12,20,32,0.06);
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+
+/* 4) Components */
+/* Item list */
+.items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem .6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(10,10,10,0.04);
+    margin: 6px 0;
+}
+
+.remove {
+    border: 0;
+    background: transparent;
+    color: var(--danger);
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+/* Add form */
+#addForm {
+    display: flex;
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+#addForm input {
+    flex: 1;
+    padding: .5rem;
+    border-radius: 6px;
+    border: 1px solid #e4e7eb;
+}
+
+/* Generic button style (keeps visual consistency) */
+button {
+    padding: .45rem .6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: #fff;
+}
+
+/* Counter */
+.counter {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.counter button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+}
+
+#count {
+    min-width: 30px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Live log box */
+.log {
+    height: 120px;
+    overflow: auto;
+    padding: .5rem;
+    background: var(--surface-1);
+    border: 1px solid #eef3ff;
+    border-radius: 6px;
+}
+
+
+/* 5) Theme: dark variables */
+/* Toggling the .dark class on <html> or <documentElement> flips colors */
+.dark {
+    --bg: #0b1020;
+    --card: #0f1626;
+    --text: #e6eef8;
+    --muted: #9fb0d2;
+}
+
+.dark .top {
+    background: linear-gradient(90deg, #0b1220, #0f1626);
+}
+
+
+/* 6) Responsive */
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 0.75rem;
+    }
+}

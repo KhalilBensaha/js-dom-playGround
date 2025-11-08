@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DOM Playground — Vanilla JS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1>DOM Playground</h1>
+    <div class="controls">
+      <label class="search">
+        Search:
+        <input id="search" placeholder="Filter items...">
+      </label>
+      <button id="toggleTheme">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Item List</h2>
+      <form id="addForm">
+        <input id="newItem" placeholder="Add a new item..." required>
+        <button>Add</button>
+      </form>
+      <ul id="items" class="items">
+        <li class="item">Sample item 1 <button class="remove">✕</button></li>
+        <li class="item">Sample item 2 <button class="remove">✕</button></li>
+      </ul>
+      <button id="clear">Clear All</button>
+    </section>
+
+    <section class="panel">
+      <h2>Counter</h2>
+      <div class="counter">
+        <button id="dec">-</button>
+        <span id="count">0</span>
+        <button id="inc">+</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Live DOM Log</h2>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Vanilla JS + DOM manipulation playground workshop</small>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
